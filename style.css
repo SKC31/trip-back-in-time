@@ -169,3 +169,26 @@ footer {
         padding: 12px 28px;
     }
 }
+
+#musicBtn {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 35px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#musicBtn:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
