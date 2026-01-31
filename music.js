@@ -1,20 +1,21 @@
 const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
+const musicBtn = document.getElementById("musicBtn");
+const startBtn = document.getElementById("startBtn");
 
-// try autoplay on page load
-window.addEventListener("load", () => {
-  music.play().catch(() => {
-    console.log("Autoplay blocked by browser");
-  });
+// Big start button
+startBtn.addEventListener("click", () => {
+  music.play();
+  startBtn.style.display = "none";
+  musicBtn.style.display = "block";
 });
 
-// mute/unmute button
-btn.addEventListener("click", () => {
+// Small mute button
+musicBtn.addEventListener("click", () => {
   if (music.muted) {
     music.muted = false;
-    btn.textContent = "🔇";
+    musicBtn.textContent = "🔇";
   } else {
     music.muted = true;
-    btn.textContent = "🎧";
+    musicBtn.textContent = "🎧";
   }
 });
