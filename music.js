@@ -1,21 +1,13 @@
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
-const startBtn = document.getElementById("startBtn");
+const music=document.getElementById("bgMusic");
+const startBtn=document.getElementById("startBtn");
+const musicBtn=document.getElementById("musicBtn");
 
-// Big start button
-startBtn.addEventListener("click", () => {
-  music.play();
-  startBtn.style.display = "none";
-  musicBtn.style.display = "block";
-});
+startBtn.onclick=()=>{
+music.play();
+startBtn.style.display="none";
+musicBtn.style.display="block";
+};
 
-// Small mute button
-musicBtn.addEventListener("click", () => {
-  if (music.muted) {
-    music.muted = false;
-    musicBtn.textContent = "🔇";
-  } else {
-    music.muted = true;
-    musicBtn.textContent = "🎧";
-  }
-});
+musicBtn.onclick=()=>{
+music.muted=!music.muted;
+};
