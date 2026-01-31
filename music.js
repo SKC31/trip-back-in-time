@@ -2,10 +2,11 @@ const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicBtn");
 
 btn.addEventListener("click", () => {
-    // Ensure the audio is loaded
-    music.load(); 
     music.play().then(() => {
-        console.log("Music started!");
+        // Song started successfully
+        btn.disabled = true;        // disable button after pressed
+        btn.style.cursor = "default";
+        btn.style.opacity = "0.8";  // subtle visual change
     }).catch((err) => {
         console.log("Playback failed:", err);
     });
