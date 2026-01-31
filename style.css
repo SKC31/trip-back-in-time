@@ -47,8 +47,8 @@ body {
 
 .memory-container {
   display: flex;
-  align-items: flex-end; /* align cartoon and photo bottom */
-  gap: 15px; /* space between photo and cartoon */
+  align-items: flex-end;
+  gap: 15px;
   position: relative;
 }
 
@@ -78,62 +78,31 @@ body {
 }
 
 /* Cartoon animations */
-@keyframes lookAround {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(-5deg); }
-}
+@keyframes lookAround { 0% { transform: rotate(0deg); } 50% { transform: rotate(5deg); } 100% { transform: rotate(-5deg); } }
 .lookAround { animation: lookAround 3s infinite alternate; }
 
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 0.9; }
-  100% { transform: translateY(-50px); opacity: 0; }
-}
+@keyframes floatUp { 0% { transform: translateY(0); opacity: 0.9; } 100% { transform: translateY(-50px); opacity: 0; } }
 .floatUp { animation: floatUp 3s infinite; }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
+@keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 .bounce { animation: bounce 1.5s infinite; }
 
-@keyframes tiltSide {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(10deg); }
-  100% { transform: rotate(-10deg); }
-}
+@keyframes tiltSide { 0% { transform: rotate(0deg); } 50% { transform: rotate(10deg); } 100% { transform: rotate(-10deg); } }
 .tiltSide { animation: tiltSide 2s infinite; }
 
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(15deg); }
-  75% { transform: rotate(-15deg); }
-}
+@keyframes wiggle { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(15deg); } 75% { transform: rotate(-15deg); } }
 .wiggle { animation: wiggle 2s infinite; }
 
-@keyframes blink {
-  0%, 90%, 100% { opacity: 1; }
-  95% { opacity: 0; }
-}
+@keyframes blink { 0%,90%,100% { opacity: 1; } 95% { opacity: 0; } }
 .blink { animation: blink 4s infinite; }
 
-@keyframes leanForward {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(15deg); }
-}
+@keyframes leanForward { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(15deg); } }
 .leanForward { animation: leanForward 3s infinite; }
 
-@keyframes hop {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
+@keyframes hop { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
 .hop { animation: hop 1.2s infinite; }
 
-@keyframes floatSide {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
-  100% { transform: translateX(0); }
-}
+@keyframes floatSide { 0% { transform: translateX(0); } 50% { transform: translateX(10px); } 100% { transform: translateX(0); } }
 .floatSide { animation: floatSide 2s infinite; }
 
 /* FOOTER */
@@ -169,7 +138,7 @@ footer {
   }
 }
 
-/* MUSIC BUTTON */
+/* MUSIC BUTTON - CENTERED & VALENTINE THEME */
 #musicBtn {
   position: fixed;
   top: 20px;
@@ -187,35 +156,15 @@ footer {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* hover effect */
 #musicBtn:hover {
   transform: translateX(-50%) scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* CARTOON CHARACTERS */
-.cartoon {
-  width: 60px;
-  opacity: 0.95;
-  filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));
-}
-.cartoon {
-  width: 60px;
-  /* remove shadow/opacity for GIFs */
-}
-/* CARTOON CHARACTERS */
-.cartoon {
-  width: 60px;
-  opacity: 0.95; /* PNGs have slight transparency */
-  filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3)); /* only PNGs */
-}
-
-/* GIFs will use inline style width and no shadow/opacity, handled in JS */
-
-/* Hero section for mobile */
+/* HERO section for mobile */
 @media (max-width: 768px) {
   .hero {
-    height: 60vh; /* smaller on phones */
+    height: 60vh; 
     padding: 20px;
   }
 
@@ -228,18 +177,4 @@ footer {
   }
 
   .memory img {
-    width: 95%; /* memory images almost full width */
-    max-width: none;
-  }
-
-  .memory-container img {
-    width: 40px; /* smaller GIFs on mobile */
-  }
-
-  footer {
-    padding: 20px;
-    font-size: 16px;
-  }
-}
-
-
+    width: 95
