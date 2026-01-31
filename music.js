@@ -1,20 +1,12 @@
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicBtn");
 
-// try autoplay on page load
-window.addEventListener("load", () => {
-  music.play().catch(() => {
-    console.log("Autoplay blocked by browser");
-  });
-});
-
-// mute/unmute button
 btn.addEventListener("click", () => {
-  if (music.muted) {
-    music.muted = false;
-    btn.textContent = "🔇";
+  if (music.paused) {
+    music.play();
+    btn.textContent = "🔇 Playing";
   } else {
-    music.muted = true;
-    btn.textContent = "🎧";
+    music.pause();
+    btn.textContent = "PRESS ME KIYOMI";
   }
 });
