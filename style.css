@@ -236,3 +236,25 @@ footer {
     font-size: 20px;
   }
 }
+#musicBtn {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    background: #ff7eb3;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 25px;
+    cursor: pointer;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.2s;
+}
+
+#musicBtn:hover {
+    background: #ff4e9b;
+    transform: translateX(-50%) scale(1.05);
+}
+
