@@ -1,17 +1,12 @@
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicBtn");
 
-let playing = false;
-
 btn.addEventListener("click", () => {
-  if (!playing) {
+  if (music.paused) {
     music.play();
-    btn.textContent = "⏸ Pause Music";
-    playing = true;
+    btn.textContent = "🔇"; // change icon to indicate playing
   } else {
     music.pause();
-    btn.textContent = "PRESS ME KIYOMI";
-    playing = false;
+    btn.textContent = "PRESS ME KIYOMI"; // back to default
   }
 });
-
