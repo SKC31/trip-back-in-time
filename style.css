@@ -221,3 +221,21 @@ footer {
   50% { transform: translateX(-50%) scale(1.05); }
   100% { transform: translateX(-50%) scale(1); }
 }
+/* MEMORY SLIDESHOW ANIMATION */
+@keyframes zoomSlide {
+  0%   { transform: scale(1) translateX(0); opacity: 1; }
+  20%  { transform: scale(1.05) translateX(0); opacity: 1; }
+  50%  { transform: scale(1) translateX(-100%); opacity: 0; }
+  51%  { transform: scale(1) translateX(100%); opacity: 0; }
+  70%  { transform: scale(1.05) translateX(0); opacity: 1; }
+  100% { transform: scale(1) translateX(0); opacity: 1; }
+}
+
+.memory {
+  position: absolute;       /* stack memories on top of each other */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
