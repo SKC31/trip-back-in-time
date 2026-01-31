@@ -1,260 +1,64 @@
-/* RESET & BODY */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Poppins;
-}
-
 body {
-  background: #fff0f5;
-  overflow-x: hidden;
+margin:0;
+font-family:Arial;
+background:#ffe6f0;
+text-align:center;
 }
 
-/* HERO SECTION */
-.hero {
-  height: 100vh;
-  background: url("images/hero.jpg") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+h1 {
+margin-top:90px;
+color:#ff2f7d;
 }
 
-.overlay {
-  background: rgba(0,0,0,0.5);
-  padding: 40px;
-  border-radius: 20px;
-  color: white;
-  text-align: center;
+#gifColumn {
+display:flex;
+flex-direction:column;
+gap:60px;
+align-items:center;
+margin-top:40px;
 }
 
-.overlay h1 {
-  font-size: 40px;
+#gifColumn img {
+width:120px;
 }
 
-/* MEMORY SECTIONS */
+#memories {
+margin-top:40px;
+}
+
 .memory {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.memory-container {
-  display: flex;
-  align-items: flex-end; /* align cartoon and photo bottom */
-  gap: 15px; /* space between photo and cartoon */
-  position: relative;
+margin:30px;
 }
 
 .memory img {
-  width: 80%;
-  max-width: 500px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.2);
-  transition: transform 0.3s;
+width:250px;
+border-radius:15px;
 }
 
-.memory img:hover {
-  transform: scale(1.05);
-}
-
-.memory p {
-  margin-top: 15px;
-  font-size: 18px;
-  text-align: center;
-}
-
-/* CARTOON CHARACTERS */
-.cartoon {
-  width: 60px;
-  opacity: 0.95;
-  filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));
-}
-
-/* Cartoon animations */
-@keyframes lookAround {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(-5deg); }
-}
-.lookAround { animation: lookAround 3s infinite alternate; }
-
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 0.9; }
-  100% { transform: translateY(-50px); opacity: 0; }
-}
-.floatUp { animation: floatUp 3s infinite; }
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.bounce { animation: bounce 1.5s infinite; }
-
-@keyframes tiltSide {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(10deg); }
-  100% { transform: rotate(-10deg); }
-}
-.tiltSide { animation: tiltSide 2s infinite; }
-
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(15deg); }
-  75% { transform: rotate(-15deg); }
-}
-.wiggle { animation: wiggle 2s infinite; }
-
-@keyframes blink {
-  0%, 90%, 100% { opacity: 1; }
-  95% { opacity: 0; }
-}
-.blink { animation: blink 4s infinite; }
-
-@keyframes leanForward {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(15deg); }
-}
-.leanForward { animation: leanForward 3s infinite; }
-
-@keyframes hop {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
-}
-.hop { animation: hop 1.2s infinite; }
-
-@keyframes floatSide {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(10px); }
-  100% { transform: translateX(0); }
-}
-.floatSide { animation: floatSide 2s infinite; }
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #ff7eb3;
-  color: white;
-}
-
-/* PETALS */
-.petal {
-  position: fixed;
-  top: -50px;         
-  width: 30px;
-  height: 30px;
-  background-image: url("images/petal.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  opacity: 0.85;
-  animation: fall-diagonal linear forwards;
-}
-
-@keyframes fall-diagonal {
-  0% {
-    transform: translateX(0) translateY(0) rotate(0deg);
-    opacity: 0.85;
-  }
-  100% {
-    transform: translateX(100vw) translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-/* MUSIC BUTTON */
-#musicBtn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  font-size: 24px;
-  background: rgba(255,255,255,0.7);
-  border: none;
-  border-radius: 50%;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 999;
-}
-/* CARTOON CHARACTERS */
-.cartoon {
-  width: 60px;
-  opacity: 0.95;
-  filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));
-}
-.cartoon {
-  width: 60px;
-  /* remove shadow/opacity for GIFs */
-}
-/* CARTOON CHARACTERS */
-.cartoon {
-  width: 60px;
-  opacity: 0.95; /* PNGs have slight transparency */
-  filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3)); /* only PNGs */
-}
-
-/* GIFs will use inline style width and no shadow/opacity, handled in JS */
-
-/* Hero section for mobile */
-@media (max-width: 768px) {
-  .hero {
-    height: 60vh; /* smaller on phones */
-    padding: 20px;
-  }
-
-  .overlay h1 {
-    font-size: 28px;
-  }
-
-  .overlay p {
-    font-size: 16px;
-  }
-
-  .memory img {
-    width: 95%; /* memory images almost full width */
-    max-width: none;
-  }
-
-  .memory-container img {
-    width: 40px; /* smaller GIFs on mobile */
-  }
-
-  footer {
-    padding: 20px;
-    font-size: 16px;
-  }
-
-  #musicBtn {
-    top: 15px;
-    right: 15px;
-    font-size: 20px;
-  }
-}
-
-/* START MUSIC BUTTON */
+/* START BUTTON */
 #startBtn {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px 25px;
-  font-size: 18px;
-  background: #ff4f9a;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  z-index: 1000;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+position:fixed;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+padding:15px 25px;
+background:#ff4f9a;
+color:white;
+border:none;
+border-radius:30px;
+font-size:18px;
+z-index:1000;
+cursor:pointer;
 }
 
-/* Hide mute button until music starts */
+/* mute button */
 #musicBtn {
-  display: none;
+display:none;
+position:fixed;
+bottom:20px;
+right:20px;
+border:none;
+padding:10px;
+border-radius:50%;
+font-size:20px;
 }
