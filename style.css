@@ -1,32 +1,27 @@
-/* MUSIC BUTTON - CENTERED & STYLED */
+/* MUSIC BUTTON STYLING */
 #musicBtn {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 20px;
   background: linear-gradient(45deg, #ff4d88, #ff77aa);
   color: white;
   border: none;
   border-radius: 30px;
-  padding: 12px 30px;
+  padding: 12px 35px;
   cursor: pointer;
-  z-index: 999;
   box-shadow: 0 6px 15px rgba(0,0,0,0.25);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #musicBtn:hover {
-  transform: translateX(-50%) scale(1.05);
+  transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-/* MOBILE RESPONSIVENESS */
+/* MOBILE STYLING */
 @media (max-width: 768px) {
   #musicBtn {
-    top: 15px;
     font-size: 18px;
-    padding: 14px 28px;
+    padding: 14px 30px;
     border-radius: 40px;
   }
 }
+
