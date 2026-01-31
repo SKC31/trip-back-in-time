@@ -236,3 +236,25 @@ footer {
     font-size: 20px;
   }
 }
+
+/* START MUSIC BUTTON */
+#startBtn {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  font-size: 18px;
+  background: #ff4f9a;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Hide mute button until music starts */
+#musicBtn {
+  display: none;
+}
