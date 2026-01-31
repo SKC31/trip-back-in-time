@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #fff0f5; /* light pink background */
+  background: #fff0f5;
   overflow-x: hidden;
 }
 
@@ -38,20 +38,21 @@ body {
 
 /* MEMORY SECTIONS - DESKTOP */
 .memory {
+  position: absolute; /* for slideshow stacking */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .memory-container {
   display: flex;
-  align-items: flex-end; /* align GIFs with main image bottom */
+  align-items: flex-end;
   gap: 15px;
   position: relative;
 }
@@ -61,11 +62,6 @@ body {
   max-width: 500px;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,.2);
-  transition: transform 0.3s;
-}
-
-.memory img:hover {
-  transform: scale(1.05);
 }
 
 .memory p {
@@ -74,7 +70,6 @@ body {
   text-align: center;
 }
 
-/* CARTOON GIFS - DESKTOP */
 .cartoon {
   width: 60px;
   opacity: 0.95;
@@ -104,14 +99,8 @@ footer {
 }
 
 @keyframes fall-diagonal {
-  0% {
-    transform: translateX(0) translateY(0) rotate(0deg);
-    opacity: 0.85;
-  }
-  100% {
-    transform: translateX(100vw) translateY(110vh) rotate(360deg);
-    opacity: 0;
-  }
+  0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0.85; }
+  100% { transform: translateX(100vw) translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
 /* MUSIC BUTTON - DESKTOP */
@@ -139,103 +128,33 @@ footer {
 
 /* MOBILE STYLES */
 @media (max-width: 768px) {
+  /* Hero */
+  .hero { height: 60vh; padding: 20px; background-size: cover; background-position: center; }
+  .overlay { padding: 20px; border-radius: 15px; }
+  .overlay h1 { font-size: 28px; }
+  .overlay p { font-size: 16px; }
 
-  /* HERO */
-  .hero {
-    height: 60vh;
-    padding: 20px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+  /* Memory sections */
+  .memory-container { flex-direction: column; align-items: center; gap: 10px; }
+  .memory img { width: 90%; max-width: 300px; border-radius: 15px; margin-bottom: 5px; }
+  .memory p { font-size: 16px; margin: 0; text-align: center; }
+  .memory-container img:nth-child(n+2) { width: 40px; } /* GIFs */
+  .petal { width: 20px; height: 20px; }
 
-  .overlay {
-    padding: 20px;
-    border-radius: 15px;
-  }
-
-  .overlay h1 {
-    font-size: 28px;
-  }
-
-  .overlay p {
-    font-size: 16px;
-  }
-
-  /* MEMORY SECTIONS - MOBILE */
-  .memory {
-    padding: 15px;
-    background: #fff0f5;            /* background behind memory images */
-    border-radius: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle card effect */
-  }
-
-  .memory-container {
-    flex-direction: column;         /* stack main image + GIF vertically */
-    align-items: center;
-    gap: 10px;
-  }
-
-  .memory img {
-    width: 90%;                     /* bigger on mobile */
-    max-width: 300px;
-    margin-bottom: 5px;
-    border-radius: 15px;
-  }
-
-  .memory p {
-    font-size: 16px;
-    text-align: center;
-    margin: 0;
-  }
-
-  .memory-container img:nth-child(n+2) {
-    width: 40px;                    /* GIFs smaller on mobile */
-  }
-
-  /* PETALS */
-  .petal {
-    width: 20px;
-    height: 20px;
-  }
-
-  /* MUSIC BUTTON */
+  /* Music button */
   #musicBtn {
     top: 15px;
     font-size: 20px;
     padding: 14px 28px;
     border-radius: 40px;
-    background: linear-gradient(45deg, #ff4d88, #ff77aa);
+    background: linear-gradient(45deg,#ff4d88,#ff77aa);
     box-shadow: 0 8px 18px rgba(0,0,0,0.3);
     animation: pulse 1.5s infinite alternate;
   }
 }
 
-/* PULSE animation for mobile music button */
 @keyframes pulse {
   0% { transform: translateX(-50%) scale(1); }
   50% { transform: translateX(-50%) scale(1.05); }
   100% { transform: translateX(-50%) scale(1); }
 }
-/* MEMORY SLIDESHOW ANIMATION */
-@keyframes zoomSlide {
-  0%   { transform: scale(1) translateX(0); opacity: 1; }
-  20%  { transform: scale(1.05) translateX(0); opacity: 1; }
-  50%  { transform: scale(1) translateX(-100%); opacity: 0; }
-  51%  { transform: scale(1) translateX(100%); opacity: 0; }
-  70%  { transform: scale(1.05) translateX(0); opacity: 1; }
-  100% { transform: scale(1) translateX(0); opacity: 1; }
-}
-
-.memory {
-  position: absolute;       /* stack memories on top of each other */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-}
-
