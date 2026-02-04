@@ -1,4 +1,5 @@
-setInterval(createPetal, 400);
+// Create petals slower to reduce CPU load
+setInterval(createPetal, 800); // every 0.8s
 
 function createPetal() {
   const petal = document.createElement("div");
