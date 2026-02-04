@@ -124,11 +124,15 @@ footer {
 }
 
 /* MOBILE STYLING */
+/* MOBILE MEMORY IMAGES */
 @media (max-width: 768px) {
-    .hero {
-        height: 60vh;
-        padding: 20px;
+    .memory img {
+        width: 100%;       /* make them fill the screen width */
+        max-width: 500px;  /* optional cap so not too huge */
+        height: auto;      /* keep proportions */
     }
+}
+
     .overlay h1 {
         font-size: 28px;
     }
@@ -166,3 +170,4 @@ footer {
         width: 35px;
     }
 }
+
