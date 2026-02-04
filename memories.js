@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const memoryContainer = document.getElementById("memories");
   const captions = Array.from({ length: 27 }, (_, i) => `Memory #${i + 1}`);
 
-  // List of GIFs
   const gifs = [
     "images/heart.gif",
     "images/sun.gif",
@@ -11,9 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "images/flower.gif"
   ];
 
-  // Distribute GIFs roughly evenly across 27 memories
-  const gifIndexes = [2, 7, 12, 18, 24]; // choose indices where GIFs appear (1-based)
-  
+  const gifIndexes = [2, 7, 12, 18, 24]; // indices for GIFs
+
   for (let i = 1; i <= 27; i++) {
     const section = document.createElement("section");
     section.className = "memory";
@@ -25,14 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const img = document.createElement("img");
     img.src = `images/pic${i}.jpg`;
     img.alt = `Memory ${i}`;
+    img.loading = "lazy"; // lazy load
     container.appendChild(img);
 
-    // Add GIF if this index matches
+    // Add GIF if index matches
     const gifIndex = gifIndexes.indexOf(i);
     if (gifIndex !== -1) {
       const cartoon = document.createElement("img");
       cartoon.src = gifs[gifIndex];
-      cartoon.style.width = "60px"; // size GIFs
+      cartoon.loading = "lazy"; // lazy load GIFs
+      cartoon.style.width = "60px";
       container.appendChild(cartoon);
     }
 
