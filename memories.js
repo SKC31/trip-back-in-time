@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "images/flower.gif"
   ];
 
-  const gifIndexes = [2, 7, 12, 18, 24]; // indices for GIFs
+  const gifIndexes = [2, 7, 12, 18, 24];
 
   for (let i = 1; i <= 27; i++) {
     const section = document.createElement("section");
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const img = document.createElement("img");
     img.src = `images/pic${i}.jpg`;
     img.alt = `Memory ${i}`;
-    img.loading = "lazy"; // lazy load
+    img.loading = "lazy";
     container.appendChild(img);
 
     // Add GIF if index matches
@@ -31,14 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (gifIndex !== -1) {
       const cartoon = document.createElement("img");
       cartoon.src = gifs[gifIndex];
-      cartoon.loading = "lazy"; // lazy load GIFs
-      cartoon.style.width = "60px";
+      cartoon.loading = "lazy";
+      cartoon.className = "cartoon"; // important for sizing
       container.appendChild(cartoon);
     }
 
     section.appendChild(container);
 
-    // Memory caption
     const p = document.createElement("p");
     p.textContent = captions[i - 1];
     section.appendChild(p);
@@ -57,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
   window.addEventListener("scroll", revealMemories);
   revealMemories();
 });
