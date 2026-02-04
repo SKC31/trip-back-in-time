@@ -6,7 +6,7 @@
     font-family: Poppins;
 }
 body {
-    background: #fff0f5;
+    background: maroon;  /* changed background to maroon */
     overflow-x: hidden;
 }
 
@@ -40,6 +40,7 @@ body {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 1s ease-out, transform 1s ease-out;
+    background-color: maroon;  /* background around memory */
 }
 .memory-container {
     display: flex;
@@ -47,9 +48,12 @@ body {
     gap: 15px; /* space between photo and cartoon */
     position: relative;
 }
+
+/* DESKTOP MEMORY IMAGES */
 .memory img {
     width: 80%;
-    max-width: 500px;
+    max-width: 600px;
+    height: auto;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,.2);
     transition: transform 0.3s;
@@ -65,30 +69,10 @@ body {
 
 /* CARTOON CHARACTERS */
 .cartoon {
-    width: 60px;
+    width: 60px;   /* desktop size */
     opacity: 0.95;
     filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.3));
 }
-
-/* CARTOON ANIMATIONS */
-@keyframes lookAround {0%{transform:rotate(0deg);}50%{transform:rotate(5deg);}100%{transform:rotate(-5deg);}}
-.lookAround {animation: lookAround 3s infinite alternate;}
-@keyframes floatUp {0%{transform:translateY(0);opacity:0.9;}100%{transform:translateY(-50px);opacity:0;}}
-.floatUp {animation: floatUp 3s infinite;}
-@keyframes bounce {0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-.bounce {animation:bounce 1.5s infinite;}
-@keyframes tiltSide {0%{transform:rotate(0deg);}50%{transform:rotate(10deg);}100%{transform:rotate(-10deg);}}
-.tiltSide {animation:tiltSide 2s infinite;}
-@keyframes wiggle {0%,100%{transform:rotate(0deg);}25%{transform:rotate(15deg);}75%{transform:rotate(-15deg);}}
-.wiggle {animation:wiggle 2s infinite;}
-@keyframes blink {0%,90%,100%{opacity:1;}95%{opacity:0;}}
-.blink {animation:blink 4s infinite;}
-@keyframes leanForward {0%,100%{transform:rotate(0deg);}50%{transform:rotate(15deg);}}
-.leanForward {animation:leanForward 3s infinite;}
-@keyframes hop {0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
-.hop {animation:hop 1.2s infinite;}
-@keyframes floatSide {0%{transform:translateX(0);}50%{transform:translateX(10px);}100%{transform:translateX(0);}}
-.floatSide {animation:floatSide 2s infinite;}
 
 /* FOOTER */
 footer {
@@ -131,43 +115,36 @@ footer {
     cursor: pointer;
     z-index: 999;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     font-weight: bold;
 }
-
 #musicBtn:hover {
     transform: translateX(-50%) scale(1.05);
     box-shadow: 0 12px 25px rgba(0,0,0,0.35);
 }
 
-/* HERO SECTION FOR MOBILE */
+/* MOBILE STYLING */
 @media (max-width: 768px) {
-    .memory img {
-        width: 90%;        /* main image takes 90% of screen width */
-        max-width: 400px;  /* optional limit to avoid huge images */
-        height: auto;      /* keep aspect ratio */
-        border-radius: 15px;
+    .hero {
+        height: 60vh;
+        padding: 20px;
     }
-
-    .memory-container img:not(:first-child) {
-        width: 50px;       /* GIF/cartoon size on mobile */
-    }
-}
-
-
     .overlay h1 {
         font-size: 28px;
     }
     .overlay p {
         font-size: 16px;
     }
+
     .memory img {
-        width: 95%;
-        max-width: none;
+        width: 90%;        /* large enough for mobile */
+        max-width: 400px;
+        height: auto;
     }
-    .memory-container img {
-        width: 40px;
+    .memory-container img.cartoon {
+        width: 40px;       /* GIFs smaller on mobile */
     }
+
     footer {
         padding: 20px;
         font-size: 16px;
@@ -179,33 +156,13 @@ footer {
     }
 }
 
-#musicBtn {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 22px;
-    background: linear-gradient(45deg, #ff7eb3, #ff758c);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    padding: 15px 35px;
-    cursor: pointer;
-    z-index: 999;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-    font-weight: bold;
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px) {
+    .memory img {
+        width: 95%;
+        max-width: 350px;
+    }
+    .memory-container img.cartoon {
+        width: 35px;
+    }
 }
-
-#musicBtn:hover {
-    transform: translateX(-50%) scale(1.05);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
-}
-
-#musicBtn {
-    transition: all 0.5s ease; /* add this line */
-}
-
-
-
-
