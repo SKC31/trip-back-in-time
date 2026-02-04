@@ -1,4 +1,8 @@
-// Play music only after button click
 document.getElementById("musicBtn").addEventListener("click", function(){
-    document.getElementById("bgMusic").play();
+    const audio = document.getElementById("bgMusic");
+    audio.play();
+
+    // Fade out the button
+    this.style.opacity = 0;
+    setTimeout(() => this.style.display = "none", 500); // hide after fade
 });
