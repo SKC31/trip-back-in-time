@@ -6,7 +6,7 @@
     font-family: Poppins;
 }
 body {
-    background: #FFAFCC;  
+    background: hotpink;  
     overflow-x: hidden;
 }
 
@@ -170,5 +170,6 @@ footer {
         width: 35px;
     }
 }
+
 
 
