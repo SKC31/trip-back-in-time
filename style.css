@@ -6,7 +6,7 @@
     font-family: Poppins;
 }
 body {
-    background: maroon;
+    background: #fff0f5;
     overflow-x: hidden;
 }
 
@@ -142,10 +142,18 @@ footer {
 
 /* HERO SECTION FOR MOBILE */
 @media (max-width: 768px) {
-    .hero {
-        height: 60vh;
-        padding: 20px;
+    .memory img {
+        width: 80%;         /* change width of main memory images */
+        max-width: 300px;   /* optional: maximum width */
+        height: auto;       /* keep aspect ratio */
+        border-radius: 15px;
     }
+
+    .memory-container img {
+        width: 50px;       /* change GIF/cartoon size on mobile */
+    }
+}
+
     .overlay h1 {
         font-size: 28px;
     }
@@ -192,4 +200,9 @@ footer {
     transform: translateX(-50%) scale(1.05);
     box-shadow: 0 12px 25px rgba(0,0,0,0.35);
 }
+
+#musicBtn {
+    transition: all 0.5s ease; /* add this line */
+}
+
 
