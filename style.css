@@ -6,7 +6,7 @@
     font-family: Poppins;
 }
 body {
-    background: #fff0f5;
+    background: maroon;
     overflow-x: hidden;
 }
 
@@ -192,3 +192,4 @@ footer {
     transform: translateX(-50%) scale(1.05);
     box-shadow: 0 12px 25px rgba(0,0,0,0.35);
 }
+
