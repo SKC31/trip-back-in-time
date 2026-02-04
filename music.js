@@ -4,5 +4,5 @@ document.getElementById("musicBtn").addEventListener("click", function(){
 
     // Fade out the button
     this.style.opacity = 0;
-    setTimeout(() => this.style.display = "none", 500); // hide after fade
+    setTimeout(() => this.style.display = "none", 500);
 });
