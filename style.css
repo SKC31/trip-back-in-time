@@ -141,18 +141,14 @@ footer {
 }
 
 /* HERO SECTION FOR MOBILE */
-@media (max-width: 768px) {
-    .memory img {
-        width: 80%;         /* change width of main memory images */
-        max-width: 300px;   /* optional: maximum width */
-        height: auto;       /* keep aspect ratio */
-        border-radius: 15px;
-    }
-
-    .memory-container img {
-        width: 50px;       /* change GIF/cartoon size on mobile */
-    }
+.memory img {
+    width: 95%;
+    max-width: none;
 }
+.memory-container img {
+    width: 40px;
+}
+
 
     .overlay h1 {
         font-size: 28px;
@@ -204,5 +200,6 @@ footer {
 #musicBtn {
     transition: all 0.5s ease; /* add this line */
 }
+
 
 
